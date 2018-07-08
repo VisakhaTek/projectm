@@ -70,21 +70,21 @@
                 <div class="col-md-5 col-lg-offset-1 col-md-offset-1 padding-right-none xs-padding-left-none sm-padding-left-none xs-margin-top-30">
                     <div class="contact_wrapper information_head">
                         <h3 class="margin-bottom-25 margin-top-none">Signup </h3>
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <div class="form_contact margin-bottom-20">
                                 <div id="result"></div>
                                 <fieldset id="contact_form">
-                                    <input name="username" class="form-control margin-bottom-25" placeholder="Username" />
-                                    <input type="password" name="password" class="form-control margin-bottom-25" placeholder="Password" />
-                                    <input type="password" name="reenter_password" class="form-control margin-bottom-25" placeholder="Reenter Password" />
-                                    <input type="password" name="reenter_password" class="form-control margin-bottom-25" placeholder="Reenter Password" />
-                                    <input type="text" name="dealer_name" class="form-control margin-bottom-25" placeholder="Dealer Name" />
-                                    <input type="text" name="address" class="form-control margin-bottom-25" placeholder="Address" />
-                                    <input type="text" name="city" class="form-control margin-bottom-25" placeholder="City" />
-                                    <input type="text" name="state" class="form-control margin-bottom-25" placeholder="State" />
-                                    <input type="text" name="zipcode" class="form-control margin-bottom-25" placeholder="Zipcode" />
-                                    <input type="text" name="phone" class="form-control margin-bottom-25" placeholder="Phone" />
-                                    <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Email" />
+                                    <input name="username" class="form-control margin-bottom-25" placeholder="Username" required />
+                                    <input type="password" name="password" class="form-control margin-bottom-25" placeholder="Password" required="True" />
+                                    <input type="password" name="reenter_password" class="form-control margin-bottom-25" placeholder="Reenter Password" required="True" />
+                                    <input type="text" name="dealer_name" class="form-control margin-bottom-25" placeholder="Dealer Name"/>
+                                    <input type="text" name="address" class="form-control margin-bottom-25" placeholder="Address"/>
+                                    <input type="text" name="city" class="form-control margin-bottom-25" placeholder="City"/>
+                                    <input type="text" name="state" class="form-control margin-bottom-25" placeholder="State"/>
+                                    <input type="text" name="zipcode" class="form-control margin-bottom-25" placeholder="Zipcode"/>
+                                    <input type="text" name="phone" class="form-control margin-bottom-25" placeholder="Phone"/>
+                                    <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Email"/>
 
                                     
                                     <input id="submit_btn" type="submit" value="Create">
