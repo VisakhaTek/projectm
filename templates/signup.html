@@ -70,7 +70,7 @@
                 <div class="col-md-5 col-lg-offset-1 col-md-offset-1 padding-right-none xs-padding-left-none sm-padding-left-none xs-margin-top-30">
                     <div class="contact_wrapper information_head">
                         <h3 class="margin-bottom-25 margin-top-none">Signup </h3>
-                        <form method="post">
+                        <form method="POST">
                             {% csrf_token %}
                             <div class="form_contact margin-bottom-20">
                                 <div id="result"></div>
@@ -86,7 +86,7 @@
                                     <input type="text" name="phone" class="form-control margin-bottom-25" placeholder="Phone"/>
                                     <input type="email" name="email" class="form-control margin-bottom-25" placeholder="Email"/>
 
-                                    
+
                                     <input id="submit_btn" type="submit" value="Create">
                                 </fieldset>
                             </div>

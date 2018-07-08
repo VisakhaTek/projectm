@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url,handler404
 from . import views
-from projectM.views import Signup
+from projectM.views import Signup,Login
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^home/$',views.home,name = 'home'),
-    url(r'^login/$',views.login,name = 'login'),
+    url(r'^login/$',Login.as_view(),name = 'login'),
     url(r'^signup/$',Signup.as_view(),name = 'signup'),
 ]
 
