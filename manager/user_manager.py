@@ -1,16 +1,15 @@
 """
-WSGI config for projectM project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
+User Manager.py
 """
+#models
+from django.contrib.auth.models import User
 
-import os
 
-from django.core.wsgi import get_wsgi_application
+class UserManager():
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "projectM.settings")
-
-application = get_wsgi_application()
+	def addUser(self,username, password, email):
+		user = User()
+		user.username = username
+		user.email = email
+		user.password = password
+		user.save()

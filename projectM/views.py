@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 
-#models
-from django.contrib.auth.models import User
+from manager.user_manager import UserManager
 
 def home(request):
     return render(request,'home.html')
@@ -27,22 +27,14 @@ class Signup(View):
     def get(self, request, *args, **kwargs):
     	return render(request, 'signup.html')
 
-    def post(self, request, *args, **kwargs): 
-    	var1 = request.POST.get('password')
-    	var2 = request.POST.get('reenter_password')
-    	print(var1,var2)
-    	
-    	if var1==var2:
-            user = User()
-            user.username = request.POST.get('username')
-            user.email = request.POST.get('username')
-            user.password = request.POST.get('password')
-            print(user.email)
-            user.save()
-            var3 = 'Success'
-    	else:
-            var3 = 'Error'
-    	return HttpResponse(var3)
+    def post(self, request, *args, **kwargs):
+
+        #Read POST data and create user. 
+        username = request.POST.get('username')
+        email = request.POST.get('username')
+        password = request.POST.get('password')
+        userManager = UserManager()
+        userManager.addUser(username,password,email)
 
 def error_404(request,exception):
     return render(request,'error.html',{'data1':'page not found'})
