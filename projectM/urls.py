@@ -22,6 +22,9 @@ urlpatterns = [
     url(r'^home/$',views.home,name = 'home'),
     url(r'^login/$',Login.as_view(),name = 'login'),
     url(r'^signup/$',Signup.as_view(),name = 'signup'),
+    url(r'^dealerhome/$',views.dealerhome,name = 'dealerhome'),
+    url(r'^user/admin/$',views.useradmin,name = 'dealeradmin'),
 ]
 
 handler404 = 'projectM.views.error_404'
+admin.site.site_header = 'projectM'
